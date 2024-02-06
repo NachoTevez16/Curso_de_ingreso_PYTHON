@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: ignacio
+apellido: tevez
 ---
 Ejercicio: entrada_salida_04
 ---
@@ -33,7 +33,16 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        #self.txt_nombre.delete(0,32) borra 32 caracteres
+        #self.txt_nombre.delete(0,tkinter.END) usa tkinter, borra todo
+        #self.txt_nombre.delete(0,len(self.txt_nombre.get())) obtiene la cantidad de caracteres y los borra
+        self.txt_nombre.get()
+        nombre_alumno = prompt("titulo","Elegi tu nombre: ")
+        self.txt_nombre.delete(0,"end")
+        self.txt_nombre.insert(0,nombre_alumno)
+    
+        
+        
         
     
 if __name__ == "__main__":
