@@ -43,7 +43,8 @@ class App(customtkinter.CTk):
         operador_A = self.txt_operador_a.get()
         operador_B = self.txt_operador_b.get()
         dividir = (int(operador_A))%(int(operador_B))
-        alert("num",f"el resto de dividir {operador_A} por {operador_B} es: {dividir}")
+        msg = f"el resto de dividir {operador_A} por {operador_B} es: {dividir}"
+        alert("num",msg)
         
         
     
