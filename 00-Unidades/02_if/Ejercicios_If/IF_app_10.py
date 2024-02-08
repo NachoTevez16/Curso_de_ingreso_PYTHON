@@ -7,8 +7,8 @@ import random
 
 
 '''
-nombre:
-apellido:
+nombre: ignacio 
+apellido: tevez
 ---
 Ejercicio: if_10
 ---

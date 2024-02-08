@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: ignacio 
+apellido: tevez
 ---
 Ejercicio: if_07
 ---
@@ -48,6 +48,7 @@ class App(customtkinter.CTk):
         #if (int_edad >= 16 and tipo == "NATIVO") or (int_edad >= 18 and tipo == "NATURALIZADO"):
         #    alert("","Puede votar")
         #else:alert("","No puede votar")
+        
         if (int_edad >=16 and tipo == "NATIVO"):
             alert("","Puede votar")
         elif (int_edad >= 18 and tipo == "NATURALIZADO"):
