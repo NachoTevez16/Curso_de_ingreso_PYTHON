@@ -33,10 +33,11 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        edad = self.txt_edad.get()
+        int_edad = int(edad)
+        if int_edad < 13 or int_edad > 17:
+            alert("","No es adolescente")
 
-        
-        
     
 if __name__ == "__main__":
     app = App()

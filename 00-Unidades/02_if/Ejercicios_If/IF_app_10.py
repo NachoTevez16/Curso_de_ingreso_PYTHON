@@ -30,9 +30,15 @@ class App(customtkinter.CTk):
         self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar", command=self.btn_mostrar_on_click)
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
-
     def btn_mostrar_on_click(self):
-        pass  
+        numero_random = random.randint(1,10)
+        if numero_random < 4:
+            alert("",f"Desaprobado, la nota es: {numero_random}")
+        elif numero_random < 6:
+            alert("",f"Aprobado, la nota es: {numero_random}")
+        elif numero_random < 11:
+            alert("",f"Promocion directa, la nota es: {numero_random}")
+        
             
 
 if __name__ == "__main__":
