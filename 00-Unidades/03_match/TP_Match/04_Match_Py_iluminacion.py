@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: ignacio
+apellido: tevez
 ---
 TP: Iluminación
 ---
@@ -43,8 +43,56 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca = self.combobox_marca.get()
+        cantidad = self.combobox_cantidad.get()
+        precio = 800
+        int_cantidad = int(cantidad)
+        total = int_cantidad*precio
+        final = 0
+        descuento = 0
         
+        match cantidad:
+            case "1":
+                descuento = 0
+                msg_descuento = "No tiene descuento"
+            case "2":
+                descuento = 0
+                msg_descuento ="No tiene descuento"
+            case "3":
+                if marca == "ArgentinaLuz":
+                    descuento = 0.15
+                    msg_descuento ="Tiene un descuento de 15%"
+                elif marca == "FelipeLamparas":
+                    descuento = 0.1
+                    msg_descuento ="Tiene un descuento de 10%"
+                else:
+                    descuento = 0.05
+                    msg_descuento ="Tiene un descuento de 5%"
+            case "4":
+                if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+                    descuento = 0.25
+                    msg_descuento ="Tiene un descuento de 25%"
+                else:
+                    descuento = 0.2
+                    msg_descuento ="Tiene un descuento de 20%"
+            case "5":
+                if marca == "ArgentinaLuz":
+                    descuento = 0.4
+                    msg_descuento ="Tiene un descuento de 40%"
+                else:
+                    descuento = 0.3
+                    msg_descuento ="Tiene un descuento de 30%"
+            case _:
+                descuento = 0.5
+                msg_descuento ="Tiene un descuento de 50%"
+        final = total - total*descuento
+        if final > 4000:
+            final = final-final*0.05
+        msg = f"Usted compro {cantidad} de lamparitas, {msg_descuento} y el precio final es: {final}"
+        alert("",msg)
+
+
+
     
 if __name__ == "__main__":
     app = App()

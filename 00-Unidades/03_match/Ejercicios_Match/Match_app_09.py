@@ -84,7 +84,6 @@ class App(customtkinter.CTk):
                     case "Mar del plata":
                         final = precio - precio*porcentaje_20
                         msg = f"El precio por dia es de {final}, {descuento_20}"
-
             case "Verano":
                 match destino:
                     case "Bariloche":
@@ -99,7 +98,6 @@ class App(customtkinter.CTk):
                     case "Mar del plata":
                         final = precio + precio*porcentaje_20
                         msg = f"El precio por dia es de {final}, {aumento_20}"
-
             case _:
                 match destino:
                     case "Bariloche":

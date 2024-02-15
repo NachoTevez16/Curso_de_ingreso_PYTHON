@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: ignacio
+apellido: tevez
 ---
 TP: While_validaciones_rising_btl
 ---
@@ -41,9 +41,8 @@ class App(customtkinter.CTk):
 
         self.label2 = customtkinter.CTkLabel(master=self, text="Estado")
         self.label2.grid(row=2, column=0, padx=20, pady=10)
-        self.combobox_tipo = customtkinter.CTkComboBox(
-            master=self, values=["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"])
-        self.combobox_tipo.grid(row=2, column=1, padx=20, pady=10)
+        self.txt_tipo = customtkinter.CTkEntry(master=self)
+        self.txt_tipo.grid(row=2, column=1, padx=20, pady=10)
 
         self.label3 = customtkinter.CTkLabel(master=self, text="Legajo")
         self.label3.grid(row=3, column=0, padx=20, pady=10)
@@ -55,7 +54,31 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        while True:
+            apellido = prompt("","Ingrese el apellido")
+            if apellido == None:
+                break
+            edad = prompt("","Ingrese la edad")
+            edad = int(edad)
+            if edad < 18 or edad > 90:
+                break
+            estado_civil = prompt("","Ingrese el estado civil (Soltero/a, Casado/a, Divorciado/a, Viudo/a)")
+            if estado_civil == None:
+                break
+            legajo = prompt("","Ingrese el numero de legajo (4 cifras, sin ceros a la izquierda)")
+            if legajo == None:
+                break
+            break
+        
+        apellido = str(apellido)
+        estado_civil = str(estado_civil)
+        legajo = int(legajo)
+
+        self.txt_apellido.insert(0,apellido)
+        self.txt_edad.insert(0,edad)
+        self.txt_legajo.insert(0,legajo)
+        self.txt_tipo.insert(0,estado_civil)
+
 
 
 if __name__ == "__main__":
