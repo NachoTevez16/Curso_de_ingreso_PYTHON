@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: ignacio
+apellido: tevez
 ---
 Ejercicio: Match_06
 ---
@@ -39,7 +39,62 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        hora = self.txt_hora.get()
+        match hora:
+            case "0":
+                msg = f"Son las {hora}, Es de noche"
+            case "1":
+                msg = f"Son la {hora}, Es de noche"
+            case "2":
+                msg = f"Son las {hora}, Es de noche"
+            case "3":
+                msg = f"Son las {hora}, Es de noche"
+            case "4":
+                msg = f"Son las {hora}, Es de noche"
+            case "5":
+                msg = f"Son las {hora}, Es de noche"
+            case "6":
+                msg = f"Son las {hora}, Es de noche"
+            case "7":
+                msg = f"Son las {hora}, Es de mañana"
+            case "8":
+                msg = f"Son las {hora}, Es de mañana"
+            case "9":
+                msg = f"Son las {hora}, Es de mañana"
+            case "10":
+                msg = f"Son las {hora}, Es de mañana"
+            case "11":
+                msg = f"Son las {hora}, Es de mañana"
+            case "12":
+                msg = f"Son las {hora}, Es de tarde"
+            case "13":
+                msg = f"Son las {hora}, Es de tarde"
+            case "14":
+                msg = f"Son las {hora}, Es de tarde"
+            case "15":
+                msg = f"Son las {hora}, Es de tarde"
+            case "16":
+                msg = f"Son las {hora}, Es de tarde"
+            case "17":
+                msg = f"Son las {hora}, Es de tarde"
+            case "18":
+                msg = f"Son las {hora}, Es de tarde"
+            case "19":
+                msg = f"Son las {hora}, Es de tarde"
+            case "20":
+                msg = f"Son las {hora}, Es de noche"
+            case "21":
+                msg = f"Son las {hora}, Es de noche"
+            case "22":
+                msg = f"Son las {hora}, Es de noche"
+            case "23":
+                msg = f"Son las {hora}, Es de noche"
+            case "24":
+                msg = f"Son las {hora}, Es de noche"
+            case _:
+                msg = f"La hora no existe"
+
+        alert("",msg)
     
     
 if __name__ == "__main__":

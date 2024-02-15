@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: ignacio
+apellido: tevez
 ---
 Ejercicio: Match_09
 ---
@@ -57,7 +57,66 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        estacion = self.combobox_estaciones.get()
+        destino = self.combobox_destino.get()
+        precio = 15000
+        final = 0
+        porcentaje_10 = 0.1
+        porcentaje_20 = 0.2
+        sin_descuento = "no tiene descuento"
+        aumento_10 = "tiene un aumento del 10%"
+        aumento_20 = "tiene un aumento del 20%"
+        descuento_20 = "tiene un descuento del 20%"
+        descuento_10 = "tiene un descuento del 10%"
+
+        match estacion:
+            case "Invierno":
+                match destino:
+                    case "Bariloche":
+                        final = precio + precio*porcentaje_20
+                        msg = f"El precio por dia es de {final},{aumento_20}"
+                    case "Cataratas":
+                        final = precio - precio*porcentaje_10
+                        msg = f"El precio por dia es de {final}, {descuento_10}"
+                    case "Cordoba":
+                        final = precio - precio*porcentaje_10
+                        msg = f"El precio por dia es de {final}, {descuento_10}"
+                    case "Mar del plata":
+                        final = precio - precio*porcentaje_20
+                        msg = f"El precio por dia es de {final}, {descuento_20}"
+
+            case "Verano":
+                match destino:
+                    case "Bariloche":
+                        final = precio - precio*porcentaje_20
+                        msg = f"El precio por dia es de {final},{descuento_20}"
+                    case "Cataratas":
+                        final = precio + precio*porcentaje_10
+                        msg = f"El precio por dia es de {final}, {aumento_10}"
+                    case "Cordoba":
+                        final = precio + precio*porcentaje_10
+                        msg = f"El precio por dia es de {final}, {aumento_10}"
+                    case "Mar del plata":
+                        final = precio + precio*porcentaje_20
+                        msg = f"El precio por dia es de {final}, {aumento_20}"
+
+            case _:
+                match destino:
+                    case "Bariloche":
+                        final = precio + precio*porcentaje_10
+                        msg = f"El precio por dia es de {final},{aumento_10}"
+                    case "Cataratas":
+                        final = precio + precio*porcentaje_10
+                        msg = f"El precio por dia es de {final}, {aumento_10}"
+                    case "Cordoba":
+                        final = precio
+                        msg = f"El precio por dia es de {final}, {sin_descuento}"
+                    case "Mar del plata":
+                        final = precio + precio*porcentaje_10
+                        msg = f"El precio por dia es de {final}, {aumento_10}"
+        alert("",msg)
+
+
             
     
 if __name__ == "__main__":

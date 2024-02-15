@@ -7,19 +7,19 @@ import customtkinter
 
 '''
 
-nombre:
-apellido:
+nombre: ignacio
+apellido: tevez
 ---
 Ejercicio: Match_01
 ---
 Enunciado:
 Obtener el valor del mes seleccionado en el combobox_mes y  
-al presionar el botón ‘Informar’ mostrar mediante alert los siguientes mensajes 
+al presionar el botón Informar mostrar mediante alert los siguientes mensajes 
 en función del mes seleccionado:
-    Si el mes seleccionado es Enero: ‘que comiences bien el año!!!’
-    Si el mes seleccionado es Marzo: ‘a clases!!’
-    Si el mes seleccionado es Julio: ‘se vienen las vacaciones!!’
-    Si el mes seleccionado es Diciembre: ‘Felices fiestas!!!’
+    Si el mes seleccionado es Enero: que comiences bien el año!!!
+    Si el mes seleccionado es Marzo: a clases!!
+    Si el mes seleccionado es Julio: se vienen las vacaciones!!
+    Si el mes seleccionado es Diciembre: Felices fiestas!!!
 
 En caso de seleccionar un mes distinto a los mencionados, no hacer nada
 '''
@@ -43,7 +43,18 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+        mes = self.combobox_mes.get()
+        match mes:
+            case "Enero":
+                msg = f"Es {mes}, que comiences bien el año!!!"
+            case "Marzo":
+                msg = f"Es {mes}, a clases!!"       
+            case "Julio":
+                msg = f"Es {mes}, se vienen las vacaciones!!"
+            case "Diciembre":
+                msg = f"Es {mes}, Felices fiestas!!!"
+        alert("",msg)
+                
     
     
 if __name__ == "__main__":
